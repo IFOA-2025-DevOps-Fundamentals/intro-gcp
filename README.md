@@ -14,7 +14,6 @@
     - [Deployment and Test of a Google Cloud Function](sections/lab.md#deployment-and-test-of-a-google-cloud-function-http-trigger)
     - [Conclusions](sections/lab.md#conclusions)
 
-
 ---
 
  # Credits
