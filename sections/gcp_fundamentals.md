@@ -41,10 +41,8 @@ graph TD
 ```
 *GCP Resource Hierarchy Schema*
 
-<!-- TODO: Verifica lo schema ed approfondisci -->
 
 ## GCP Billing 
-<!-- TODO: From MarcoM slides -->
 ![alt text](image.png)
 ![alt text](image-1.png)
 ![alt text](image-2.png)
@@ -67,7 +65,7 @@ After the actiation of the account, you will need to keep under control costs an
 
 
 ## GCP Resource Hierarchy and Projects
-<!-- TODO: From MarcoM slides -->
+
 In GCP, all services are associated with a project. Through a project, you can track resorce usage, enable billing, manage permissions and credentials, enable services and APIs ...
 
 To create a new project: 
@@ -89,7 +87,6 @@ Usually, projects belongs to organizations, and you can have one or many.
 After the creation of the organization or a project, you can add other users or members through Google Workspace or Cloud Identity. 
 
 ## GCP IAM and Service Accounts
-<!-- TODO: From MarcoM slides -->
 
 In GCP there are 2 main type of accounts: *user accounts* and *service accounts*. 
 
@@ -163,7 +160,6 @@ To use the service account, than you can:
 
 
 ## How to Interact with GCP
-<!-- TODO: From MarcoM slides -->
 
 There are 4 main ways to interact with GCP: 
 1. Through GCP Console (Web UI)
@@ -200,43 +196,30 @@ For more information, explore the associated [docs](https://cloud.google.com/sdk
 
 ### Cloud Shell vs. Cloud SDK
 
-| Tool  | Cloud Shell | Cloud SDK |
-| ----- | ----------- | --------- |
-| Usage | For rapid tests, management via browser, no installation | To manage GCP from your pc or automate with scripts |
+| Tool      | Cloud Shell | Cloud SDK |
+| --------- | ----------- | --------- |
+| **Usage** | For rapid tests, management via browser, no installation | To manage GCP from your pc or automate with scripts |
 <!-- TODO: Refine the table -->
 
 
 ## GCP Services Overview
-<!-- TODO: From MarcoM slides -->
 
 They are MANY. 
 ![alt text](image-12.png)
 
-<!-- TODO: organize in a table -->
-Main categories are: 
-1. Gestione
-2. Computing
-3. Archiviazione
-4. Analisi
-5. Networking
-6. Distributed Cloud
-7. Serverless
-8. Database
-9. Osservabilità
-10. Operazioni
-11. Sicurezza
-12. Sviluppo di app
-13. CI/CD
-14. Intelligenza artificiale
-15. Servizi di integrazione
-16. Strumenti
-17. Web3
-18. Altri prodotti Google
+Main categories are:
+
+| <!--      --> | <!--     --> | <!--                 --> | <!--       --> | <!--      --> | <!--             --> |
+| ------------- | ------------ | ------------------------ | -------------- | ------------- | -------------------- |
+| 1. Management | 2. Computing | 3. Archiving             | 4. Analysis    | 5. Networking | 6. Distributed Cloud |
+| 7. Serverless | 8. Database  | 9. Observability         | 10. Operations | 11. Security  | 12. App Development  |
+| 13. CI/CD     | 14. AI       | 15. Integration Services | 16. Tools      | 17. Web3      | 18. Other            |
 
 More in detail: ...
 
 ---
 
+<!-- TODO: organize in a table -->
 ### **1. Computing**
 - **Compute Engine** → Scalable virtual machines.
 - **App Engine** → PaaS for running applications without managing infrastructure.
@@ -330,6 +313,7 @@ We will focus on: ***Google App Engine***, ***Google Cloud Functions*** and ***C
 
 ## Google App Engine (GAE) 
 <!-- (40 Minuti) -->
+<!-- TODO: TEST -->
 
 **Google App Engine (GAE)** is a **PaaS cloud computing platform** for developing and hosting web applications in Google-managed data centers. GAE abstracts the underlying infrastructure, allowing developers to focus on writing code.
 
@@ -353,6 +337,8 @@ We will focus on: ***Google App Engine***, ***Google Cloud Functions*** and ***C
 
 ## Cloud Pub/Sub 
 <!-- (30 Minuti) -->
+<!-- TODO: TEST -->
+
 
 **Cloud Pub/Sub** is an asynchronous messaging service that decouples the services that produce events from the services that process them. It follows the **Publish-Subscribe** pattern, where senders (publishers) send messages to categories (topics) without knowing the specific recipients (subscribers).
 **Concetti chiave di Cloud Pub/Sub:**
@@ -399,6 +385,7 @@ graph TD
 
 ## Google Cloud Functions
 <!-- (40 Minutes) -->
+<!-- TODO: TEST -->
 
 **Google Cloud Functions** is Google Cloud's **serverless event-driven compute** platform. The serverless paradigm lets you run code in response to events without having to worry about managing the underlying infrastructure.
 
