@@ -1,5 +1,6 @@
-# intro-gcp
+# Intro to Google Cloud Platform
  
+<!-- TODO: Aggiorna TOC con nuove sezioni -->
 ## Table Of Contents
 - [Introduction](sections/intro.md) <!-- TODO: valuta se eliminare -->
 - [GCP Fundamentals](sections/gcp_fundamentals.md)
