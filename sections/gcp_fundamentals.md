@@ -43,11 +43,11 @@ graph TD
 
 
 ## GCP Billing 
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-![alt text](image-4.png)
+![alt text](../assets/images/image.png)
+![alt text](../assets/images/image-1.png)
+![alt text](../assets/images/image-2.png)
+![alt text](../assets/images/image-3.png)
+![alt text](../assets/images/image-4.png)
 
 > [!NOTE]
 >
@@ -70,11 +70,11 @@ In GCP, all services are associated with a project. Through a project, you can t
 
 To create a new project: 
 
-![alt text](image-5.png)
-![alt text](image-6.png)
-![alt text](image-7.png)
-![alt text](image-8.png)
-![alt text](image-9.png)
+![alt text](../assets/images/image-5.png)
+![alt text](../assets/images/image-6.png)
+![alt text](../assets/images/image-7.png)
+![alt text](../assets/images/image-8.png)
+![alt text](../assets/images/image-9.png)
 
 Usually, projects belongs to organizations, and you can have one or many.
 
@@ -178,7 +178,7 @@ It does not require installation as is available throgh the Web UI, perfect for 
 
 To use it, click on the terminal icon in the top left of the GCP landing page. 
 
-![alt text](image-11.png)
+![alt text](../assets/images/image-11.png)
 
 Read pop-ups, activate the machine, and then explore the shell. 
 
@@ -205,7 +205,7 @@ For more information, explore the associated [docs](https://cloud.google.com/sdk
 ## GCP Services Overview
 
 They are MANY. 
-![alt text](image-12.png)
+![alt text](../assets/images/image-12.png)
 
 Main categories are:
 
