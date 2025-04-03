@@ -1,5 +1,27 @@
 ## GCP Lab 
-(circa 2 Ore) -->
+<!-- (circa 2 Ore) -->
+
+## Prerequisites
+
+The main prerequisite is to install the Google Cloud SDK to have the ability to interact with your cloud instances locally via command line. 
+
+To do it, navigate to [install Cloud SDK on your pc](https://cloud.google.com/sdk?hl=it), then click on `Install Google Cloud CLI`.
+After the installation, you will have the possibility to interact with GCP from the terminal.
+
+During the installation, will be asked if you want to install Python contextually. If you do not have Python already installed, accept it, otherwise, deselect the option. For more information about performing the installation without Python, look at the [google topic startup](https://cloud.google.com/sdk/gcloud/reference/topic/startup?authuser=2) page. 
+
+> [!NOTE]
+>
+> Generally speaking, GCloud CLI has the abilty to find your local Python installation in scenarios where you had Python already installed and you unchecked the "install Python" option. Btw, sometimes it fails: in these cases, look at `google topic startup`.
+
+After the installation, you will need to authenticate. To do it, on a terminal (on Windows: ***use the command-prompt, not PowerShell!***), type `gcloud init`. It will route you on the internet to perform the access to your GCP platform. 
+
+> [!NOTE]
+>
+> If you are working on VSCode (suggested), you can add the official plugin [Google Cloud Code](https://cloud.google.com/code?hl=it).
+> 
+>It will contextually install the Gemini plugin (*very annoying*), but you can easily disable or just ... *ignore it*.
+
 
 ## Development and Deployment of a Web Application with Flask on Google App Engine
 <!-- (75 Minuti) -->
@@ -10,7 +32,7 @@ In this section, we will create a simple web application in Python using the Fla
 
 - Have a working Python 3 environment.
 - Have a verified Google account with an active free tier profile.
-- Have installed and configured the Google Cloud SDK (Software Development Kit) on your computer. You can find the installation guide here: <https://cloud.google.com/sdk>.
+- Have installed and configured the Google Cloud SDK (Software Development Kit) on your computer.
 
 **Step 1: Create a local Flask project**
 
@@ -109,9 +131,15 @@ To generate it, write in your console:
 **Step 4: Cleaning**
 
 If you do not intend to use the application, you can deactivate it to avoid costs:
-    ```bash
-    gcloud app disable
-    ```
+You can do it through the GCP Web UI: 
+1. Navigate to AppEngine > Dashboard
+2. Select `Settings`
+3. Click on `Deactivate Application` 
+4. Follow instructions
+
+> [!NOTE]
+>
+> You may still be charged for other services in your Google Cloud project, such as stored data. To avoid it, ***eliminate the entire project***.
 
 ## Interacting with Google Cloud Pub/Sub via CLI 
 <!-- (30 Minuti) -->
