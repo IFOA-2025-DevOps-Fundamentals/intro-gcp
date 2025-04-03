@@ -19,6 +19,8 @@ GCP guarantees:
 - **Reliability:** Google's global infrastructure ensures high availability.
 - **Flexibility:** Wide range of services for different needs.
 
+A good reference to take a look at some practical code applied to the platoform, is this [GitHub repository](https://github.com/GoogleCloudPlatform).
+
 ## GCP Fundamental Concepts
 <!-- (30 Minuti) -->
 
@@ -122,7 +124,7 @@ Main roles are:
     - Add and remove administrators
 
 Predefined roles apply to individual resources. 
-![alt text](image-10.png)
+![alt text](../assets/images/image-10.png)
 
 Custom roles are defined by the user as a collection of allowed operations. 
 
@@ -315,7 +317,7 @@ We will focus on: ***Google App Engine***, ***Google Cloud Functions*** and ***C
 <!-- (40 Minuti) -->
 <!-- TODO: TEST -->
 
-**Google App Engine (GAE)** is a **PaaS cloud computing platform** for developing and hosting web applications in Google-managed data centers. GAE abstracts the underlying infrastructure, allowing developers to focus on writing code.
+**Google App Engine (GAE)** is a **PaaS cloud computing platform** for developing and hosting web applications in Google-managed data centers. GAE abstracts the underlying infrastructure, allowing developers to focus on writing code. It is classified as a **Serverless product**, as it allows developers to write and deploy code without owning a physical server. 
 
 **Key features of GAE:**
 
@@ -325,28 +327,56 @@ We will focus on: ***Google App Engine***, ***Google Cloud Functions*** and ***C
 * **Automatic scaling:** App Engine automatically scales the number of instances of your application based on load. Instances are deallocated when usage is low.
 * **Service, Version, and Instance Management:** A GAE application is a top-level container that includes services (the logical components of your app), versions (different distributions of a service's code), and instance resources (the computational resources that a version runs on). Services in App Engine generally behave like **microservices**. Versioning allows for testing, rollbacks, and other temporary events.
 
+Under a development perspective, the platform allows to focus mainly on code, without taking care of the underlying OS, network, ...
+
 **Things to consider when developing for GAE:**
 
 * **Resource management strategies** (e.g., database design).
 * **Expected performance** (e.g., choosing between Memcache and Datastore).
 * **Service configuration parameters** (e.g., pending latencies).
 * **Pricing:** GAE offers a **Free tier** (12-month credit or $300) and a **"Always Free" tier** with service-specific limitations (e.g., frontend/backend instance hours, Cloud Storage, egress traffic). **Development and configuration errors can result in significant costs!**.
+- **Always free tier limitations**:
+    - 28 frontend instance hours per day, 9 backend instance hours per day
+    - 5 GB Cloud Storage
+    - 1 GB of egress per day
+    - Shared memcache
+    - 1,000 search operations per day, 10 MB of search indexing
+    - 100 email messages per day
 
-<!-- TODO: Approfondisci -->
+
+### More on Service, Version, Instance Management
+
+As reported before, in GAE application is a top-level container that includes: service, version, instance.
+
+At least one service is required (the default service). Remeber: the default service is not possible to be deleted.
+
+![alt text](../assets/images/image-13.png)
+
+The top-level GAE app can have multiple services, each service can have multiple versions, each version multiple istances. 
+
+Such an organization is proposed to allow developers to split down their projects into smallers pieces (i.e., services) sharing the same App Engine features and that can talk one with the other. 
+
+To this regard, GAE services reseamble microservices, sharing their same role. Each service contains its own code and the corresponding coinfiguration files. 
+
+Versions under the same service allow to access to different version of the same service, to perform tests, rollbacks, or to handle other temporary events. 
+
+Each version holds one or more instances, which are scaled up or down with respect to computing requests. Therefore, when the number of users grow, more instances handling their requests are created; if requests decrease, otherwise. In this way is achieved system *elasticity*.
 
 
 ## Cloud Pub/Sub 
 <!-- (30 Minuti) -->
 <!-- TODO: TEST -->
 
-
 **Cloud Pub/Sub** is an asynchronous messaging service that decouples the services that produce events from the services that process them. It follows the **Publish-Subscribe** pattern, where senders (publishers) send messages to categories (topics) without knowing the specific recipients (subscribers).
-**Concetti chiave di Cloud Pub/Sub:**
+
+In GCP is categorized as an **analysis tool**.
 
 > [!NOTE]
 > 
 > More information on about the Pub/Sub pattern [here](https://dreams.news/articles/i-design-pattern-parliamo-di-publish-subscribe).
 
+
+**Cloud Pub/Sub key concepts:**
 - **Topic:** A named resource to which publishers send messages.
 - **Subscription:** A named resource that represents the flow of messages from a single specific topic to be delivered to the subscribed application.
 - **Message:** The combination of data (payload) and attributes (optional metadata) that a publisher sends to a topic and that is ultimately delivered to subscribers.

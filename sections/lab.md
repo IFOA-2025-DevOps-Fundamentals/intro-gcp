@@ -141,6 +141,23 @@ You can do it through the GCP Web UI:
 >
 > You may still be charged for other services in your Google Cloud project, such as stored data. To avoid it, ***eliminate the entire project***.
 
+### Extra 1: add two different handlers
+
+Create a Flask web app with two different handlers: 
+1. at the base url (/) the application prints "index page" using an external template (i.e., html, not string template), 
+2. at the url (/test) the application shows the message "test page" using the same template.
+
+Enhance the application with css and try to structure as much as possible the code.
+
+### Extra 2: add 404 page handler
+
+Following the same approach as the previous extra exercise, add an handler for the 404 page. 
+
+### Extra 3: deploy on GAE
+
+Now deploy the new version of the app on GAE.
+
+
 ## Interacting with Google Cloud Pub/Sub via CLI 
 <!-- (30 Minuti) -->
 
@@ -148,41 +165,54 @@ In this section, we will use the Google Cloud CLI to interact with Cloud Pub/Sub
 
 **Step 1: Creating a Topic**
 
-1.  Create a new Pub/Sub topic called `my-test-topic` in your project:
+- Create a new Pub/Sub topic called `my-test-topic` in your project:
     ```bash
     gcloud pubsub topics create my-test-topic --project=[YOUR_PROJECT_ID]
     ```
+- You can verify the creation of the topic via the WebUI
+![alt text](../assets/images/image-14.png)
+
 
 **Step 2: Posting Messages**
 
-1.  Post some messages on the newly created topic:
+-  Post some messages on the newly created topic:
     ```bash
     gcloud pubsub topics publish my-test-topic --message="First test message" --attribute="source=cli" --project=[YOUR_PROJECT_ID]
-    gcloud pubsub topics publish my-test-topic --message="Secondo message" --attribute="type=notification" --project=[YOUR_PROJECT_ID]
+    gcloud pubsub topics publish my-test-topic --message="Second message" --attribute="type=notification" --project=[YOUR_PROJECT_ID]
     ```
 
 **Step 3: Creating a Subscription (Pull)**
 
-1.  Create a pull subscription called `my-pull-subscription` to the topic `my-test-topic`:
+-  Create a pull subscription called `my-pull-subscription` to the topic `my-test-topic`:
     ```bash
     gcloud pubsub subscriptions create my-pull-subscription --topic=my-test-topic --project=[YOUR_PROJECT_ID]
     ```
+- You can verify the subscription via the WebUI
+![alt text](../assets/images/image-15.png)
 
 **Step 4: Pull Messages**
 
-1. Retrieve messages from subscription:
+- Retrieve messages from subscription:
     ```bash
-    gcloud pubsub subscriptions pull my-pull-subscription --auto-ack --project=[YOUR_PROJECT_ID]
+    gcloud pubsub subscriptions pull projects/[YOUR_PROHECT_ID]/subscriptions/my-pull-subscription --auto-ack --project=[YOUR_PROJECT_ID]
     ```
-    The `--auto-ack` flag indicates that received messages should be automatically acknowledged, removing them from the queue.
+    The `--auto-ack` flag indicates that received messages should be automatically acknowledged, ***removing them from the queue***.
+
+- You can view messages also from the WebUI.
+Go under: 
+    - `arguments > messages`, 
+    - select the subscription from the 2nd step drop-down list pull (without ack) 
+    - check messages
 
 **Step 5: Cleaning**
 
-1.  Delete the subscription and topic (if you no longer need it):
+- Delete the subscription and topic (if you no longer need it):
     ```bash
     gcloud pubsub subscriptions delete my-pull-subscription --project=[YOUR_PROJECT_ID]
     gcloud pubsub topics delete my-test-topic --project=[YOUR_PROJECT_ID]
     ```
+    You can check the effective deletion of the project also via the WebUI.
+
 
 ## Deployment and Test of a Google Cloud Function (HTTP Trigger) 
 <!-- (15 Minuti) -->
