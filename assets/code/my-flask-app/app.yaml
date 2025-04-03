@@ -2,4 +2,4 @@ runtime: python312
 handlers:
 - url: /.*
   script: auto
-  secure: alwayss
+  secure: always
