@@ -1,6 +1,7 @@
 # Intro to Google Cloud Platform
  
 <!-- TODO: Aggiorna TOC con nuove sezioni -->
+<!-- TODO: rinomina i file in "sections" numerandoli per ottenere l ordinamento atteso -->
 ## Table Of Contents
 - [Introduction](sections/intro.md) <!-- TODO: valuta se eliminare -->
 - [GCP Fundamentals](sections/gcp_fundamentals.md)
