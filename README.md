@@ -1,20 +1,19 @@
 # Intro to Google Cloud Platform
  
 <!-- TODO: Aggiorna TOC con nuove sezioni -->
-<!-- TODO: rinomina i file in "sections" numerandoli per ottenere l ordinamento atteso -->
 ## Table Of Contents
-- [Introduction](sections/intro.md) <!-- TODO: valuta se eliminare -->
-- [GCP Fundamentals](sections/gcp_fundamentals.md)
-    - [GCP Fundamentals Concepts](sections/gcp_fundamentals.md#gcp-fundamental-concepts)
-    - [Google App Engine](sections/gcp_fundamentals.md#google-app-engine-gae)
-    - [Cloud Pub/Sub](sections/gcp_fundamentals.md#cloud-pubsub)
-    - [Google Cloud Functions](sections/gcp_fundamentals.md#google-cloud-functions)
+- [Introduction](sections/01_intro.md) <!-- TODO: valuta se eliminare -->
+- [GCP Fundamentals](sections/02_gcp_fundamentals.md)
+    - [GCP Fundamentals Concepts](sections/02_gcp_fundamentals.md#gcp-fundamental-concepts)
+    - [Google App Engine](sections/02_gcp_fundamentals.md#google-app-engine-gae)
+    - [Cloud Pub/Sub](sections/02_gcp_fundamentals.md#cloud-pubsub)
+    - [Google Cloud Functions](sections/02_gcp_fundamentals.md#google-cloud-functions)
 
-- [Lab](sections/gcp_fundamentals.md)
-    - [Development and Deployment of a Web Application on Google App Engine](sections/lab.md#development-and-deployment-of-a-web-application-with-flask-on-google-app-engine)
-    - [Interacting with Google Cloud Pub/Sub via CLI ](sections/lab.md#interacting-with-google-cloud-pubsub-via-cli)
-    - [Deployment and Test of a Google Cloud Function](sections/lab.md#deployment-and-test-of-a-google-cloud-function-http-trigger)
-    - [Conclusions](sections/lab.md#conclusions)
+- [Lab](sections/03_lab.md)
+    - [Development and Deployment of a Web Application on Google App Engine](sections/03_lab.md#development-and-deployment-of-a-web-application-with-flask-on-google-app-engine)
+    - [Interacting with Google Cloud Pub/Sub via CLI ](sections/03_lab.md#interacting-with-google-cloud-pubsub-via-cli)
+    - [Deployment and Test of a Google Cloud Function](sections/03_lab.md#deployment-and-test-of-a-google-cloud-function-http-trigger)
+    - [Conclusions](sections/03_lab.md#conclusions)
 
 ---
 
