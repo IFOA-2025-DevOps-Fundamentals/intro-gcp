@@ -424,6 +424,14 @@ graph TD
 * **Multiple language support:** Node.js, Python (3.7+), Go.
 * **Events and Triggers:** Functions are triggered by **events** (things that happen in your cloud environment) and are associated with **triggers** (declarations of interest in a certain event).
 
+In particular, triggers can be classified into 2 main groups: 
+
+1. HTTP triggers
+2. Event triggers
+    - Direct triggers
+    - Cloud Pub/Sub triggers
+    - Cloud Firestore triggers (on database updates)
+
 **Supported event types:**
 
 * **HTTP:** The function is invoked via an HTTP request (can be used to create APIs).
