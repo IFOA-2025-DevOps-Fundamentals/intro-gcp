@@ -276,6 +276,11 @@ In this section, we will create a simple HTTP-triggered Cloud Function.
     ```
     The `--allow-unauthenticated` option makes the function accessible without authentication for ease of testing. **In production, it is recommended to implement authentication.**.
 
+    You can check the status of the deployment visualizing the logs: 
+    ```bash
+    gcloud functions logs read hello-world-function
+    ```
+
 **Step 3: Test of the Cloud Function**
 
 1.  Once the deployment is complete, you will get the URL of the function. You can also retrieve it with the command:
