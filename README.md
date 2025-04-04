@@ -1,5 +1,6 @@
 # Intro to Google Cloud Platform
- 
+An overview on Google Cloud Platform with practical hands-on and examples.
+
 <!-- TODO: Aggiorna TOC con nuove sezioni -->
 ## Table Of Contents
 - [Introduction](sections/01_intro.md) <!-- TODO: valuta se eliminare -->
