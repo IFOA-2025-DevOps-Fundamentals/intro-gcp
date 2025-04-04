@@ -315,7 +315,6 @@ We will focus on: ***Google App Engine***, ***Google Cloud Functions*** and ***C
 
 ## Google App Engine (GAE) 
 <!-- (40 Minuti) -->
-<!-- TODO: TEST -->
 
 **Google App Engine (GAE)** is a **PaaS cloud computing platform** for developing and hosting web applications in Google-managed data centers. GAE abstracts the underlying infrastructure, allowing developers to focus on writing code. It is classified as a **Serverless product**, as it allows developers to write and deploy code without owning a physical server. 
 
@@ -365,7 +364,6 @@ Each version holds one or more instances, which are scaled up or down with respe
 
 ## Cloud Pub/Sub 
 <!-- (30 Minuti) -->
-<!-- TODO: TEST -->
 
 **Cloud Pub/Sub** is an asynchronous messaging service that decouples the services that produce events from the services that process them. It follows the **Publish-Subscribe** pattern, where senders (publishers) send messages to categories (topics) without knowing the specific recipients (subscribers).
 
@@ -442,11 +440,61 @@ graph TD
 ```
 *Cloud Functions Schema (Custom Schema)*
 
-**Cloud Functions Pricing:** Costs depend on the duration of the function execution, the number of invocations, resources allocated, and outgoing network traffic. A **free tier** is available with limits on invocations, compute time, and network traffic.
+### Cloud Functions Caveats
+When an event triggers the execution of a Cloud Function, data associated to that event are passed to the function as parameters. 
+A *trigger* is a declaration of interest to certain events or a set of events. Associating a function to a trigger allows the function to capture events it is interested in.
+
+The binding is done through commnad-line, UI or Cloud Functions API deployment. 
+
+Events are delivered at least once. Spurious duplicates can occur! But ... *What does it mean?*
+
+**1. "Delivered at least once":**
+- Google guarantees that every event is delivered at least once to the Cloud Function.
+- This means that the event will not be lost, even if there are temporary problems (such as network errors or function crashes).
+- Reliable, but...
+
+**2. "Spurious duplicates can occur":**
+- There may be duplicates of the same event, even if it has already been delivered and processed once.
+- There can be many reasons: automatic retries in case of timeouts or errors, confirmations not received, etc.
+- You must handle duplicates in your function code.
+
+**What this means for you as a developer:**
+- You must design your Cloud Functions to be ***idempotent***:
+    - Idempotent means that if you perform the same operation multiple times with the same input, the final effect will be the same as if you had performed it only once.
+    - Example: updating a record with the same value instead of always adding a new record.
+
+**Concrete example:** Suppose a developer wants to design a function that saves an order to a database when it receives an event.
+
+- Without protections, if the message arrives twice:
+    - The function saves two identical orders → ❌ error.
+
+- Solution:
+    - The function checks if the order has already been saved (e.g. with a unique ID) before inserting it.
+    - So, even if you receive duplicates, you have no side effects → ✅ Good behavior.
+
+### Cloud Functions Use Cases and Pricing
 
 **Cloud Functions use cases:**
 
-- Real-time file processing (e.g., image resizing).
-- Task automation (e.g., order dispatch).
-- Backend for web and mobile applications (building RESTful APIs).
-- Cloud service integration.
+- Real-time file processing, e.g., image resizing: before uploading of an image to a cloud service, it is resized, manipulated, thumbsnails are generated, and so on
+- Task automation, e.g., order dispatch: the order request is managed by a function, which extracts the data and sends the result to the correct destination
+- Backend for web and mobile applications, e.g. building RESTful APIs: serverless functions can act as a routing layer for API request governing the access logic to DBs, glueing together the front-end to the back-end of a Web application
+- Cloud service integration
+
+In general most of the times uploaded artifacts are coded a **single-purpose functions** that are attached to events received by it.
+The advantage stands in the fully managed environment, with automatic scaling of the function with respect the trafic, offering a complete ***system elasticity***.
+
+The main use case consists in a layer of logic allowing developers to connect several cloud services, **binding events triggering the execution of a function**. In other words, Cloud Functions act as a **glue** between different distributed pieces of code.
+
+**Cloud Functions Pricing:**
+Costs for Cloud Functions have several drivers. They depend on:
+- the duration of the function execution, 
+- the number of invocations, 
+- resources allocated, 
+- outgoing network traffic. 
+
+A **free tier** is available with limits on invocations, compute time, and network traffic: 
+- Invocations: 2 milions invocations per month
+- Computing time: 400.000 GB-seconds per month, 200.000 Ghz-seconds per month
+- Networking: 5GB outbound data per month, unlimited inbound, unlimited outbound data to Google APIs in the same origin.
+
