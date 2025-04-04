@@ -95,6 +95,10 @@ To generate it, write in your console:
     ```
     This tells App Engine to use the Python 3.11 runtime and route all requests to the Flask application (whose entry point is automatically detected).
 
+    > [!NOTE]
+    >
+    > More info about `app.yaml` and other configuration files [here](https://cloud.google.com/appengine/docs/standard/reference/app-yaml?hl=it&tab=python).
+
 **Step 3: Deployment on Google App Engine**
 
 1. Make sure you have initialized gcloud CLI and selected your GCP project. If you haven't already, follow the instructions here: <https://cloud.google.com/sdk/docs/initializing>. <!-- TODO: Fai sezione per gcloud CLI -->
@@ -221,11 +225,9 @@ In this section, we will create a simple HTTP-triggered Cloud Function.
 
 **Step 1: Creating the Function Code**
 
-1.  **Step 1: Creating the Function Code**Create a new directory called `hello-function`.
-2.  Inside this directory, create a file called `main.py` with the following code:
+1. Create a new directory called `hello-function` (or `gcf-flask-app`).
+2. Inside this directory, create a file called `main.py` with the following code:
     ```python
-    from flask import escape
-
     def hello_http(request):
         """
         HTTP Cloud Function.
@@ -241,16 +243,34 @@ In this section, we will create a simple HTTP-triggered Cloud Function.
             name = 'World'
         return f'Hello {escape(name)}!'
     ```
-3.  Create a file called `requirements.txt` in the same directory with the `Flask` ​​dependency, and report inside the context of the requirements generated previously:
+3. (*optional*) Eventually create a file called `requirements.txt` in the same directory. It will report your functions dependencies. Assuming, for example, your function depends on `Flask`, The content of the file will be:
     ```
-    Flask
+    Flask==3.1.0
+    blinker==1.9.0
+    click==8.1.8
+    colorama==0.4.6
+    itsdangerous==2.2.0
+    Jinja2==3.1.6
+    MarkupSafe==3.0.2
+    Werkzeug==3.1.3
     ```
 
 **Step 2: Deployment of the Cloud Function**
 
-1.  Make sure you are in the `hello-function` directory in your terminal.
+1. Make sure you are in the `hello-function` directory in your terminal.
 
-2.  Deploy the Cloud Function called `hello-world-function` with HTTP triggers and Python 3.11 runtime (or a supported version):
+2. Deploy the Cloud Function called `hello-world-function` with HTTP triggers and Python 3.11 runtime (or a supported version).
+
+    To check the version of Python you have, write on the console:
+    ```bash
+    python --version
+    ```
+    The result will be something like: 
+     ```bash
+    Python 3.12.4
+    ```
+    
+    Then, deploy the function with the following command:
     ```bash
     gcloud functions deploy hello-world-function --runtime python311 --trigger-http --allow-unauthenticated --project=[YOUR_PROJECT_ID]
     ```
@@ -281,12 +301,32 @@ In this section, we will create a simple HTTP-triggered Cloud Function.
     ```
     The response should be "Hello GCP User!".
 
+    > [!NOTE]
+    >
+    > It is possible to do the same tests with a specialized software, such as Postman.
+
 **Step 4: Cleaning**
 
 If you no longer need the Cloud Function, you can delete it:
 ```bash
 gcloud functions delete hello-world-function --project=[YOUR_PROJECT_ID]
 ```
+
+Is possible to delete the function also from the WebUI.
+
+**Extra: Creation from UI**
+
+It is also possible to create the function from the Web UI:
+1. Open the page reporting all the products 
+2. Go to the Serverless section
+3. Click on "Cloud Run Functions"
+4. Follow the images
+
+![alt text](../assets/images/image-16.png)
+
+![alt text](../assets/images/image-17.png)
+
+At this page, you can visually specify the details of your function.
 
 ## Conclusions 
 <!-- (5 Minuti) -->
