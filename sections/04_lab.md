@@ -1,4 +1,4 @@
-## GCP Lab 
+# GCP Lab: Let's Experiment!
 <!-- (circa 2 Ore) -->
 
 ## Prerequisites
