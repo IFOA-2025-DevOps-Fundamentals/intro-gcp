@@ -22,11 +22,22 @@ graph TD
 
 
 ## GCP Billing 
-![alt text](../assets/images/image.png)
-![alt text](../assets/images/image-1.png)
-![alt text](../assets/images/image-2.png)
-![alt text](../assets/images/image-3.png)
-![alt text](../assets/images/image-4.png)
+
+<div align="center">
+    <img src="../assets/images/image.png" width="550"/>
+    <img src="../assets/images/image-1.png" width="550"/>
+    <img src="../assets/images/image-2.png" width="550"/>
+    <img src="../assets/images/image-3.png" width="550"/>
+    <img src="../assets/images/image-4.png" width="550"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>An overview over GCP billing.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 > [!NOTE]
 >
@@ -49,11 +60,22 @@ In GCP, all services are associated with a project. Through a project, you can t
 
 To create a new project: 
 
-![alt text](../assets/images/image-5.png)
-![alt text](../assets/images/image-6.png)
-![alt text](../assets/images/image-7.png)
-![alt text](../assets/images/image-8.png)
-![alt text](../assets/images/image-9.png)
+
+<div align="center">
+    <img src="../assets/images/image-5.png" width="550"/>
+    <img src="../assets/images/image-6.png" width="550"/>
+    <img src="../assets/images/image-7.png" width="550"/>
+    <img src="../assets/images/image-8.png" width="550"/>
+    <img src="../assets/images/image-9.png" width="550"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>How to create a new project in GCP.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 Usually, projects belongs to organizations, and you can have one or many.
 
@@ -102,8 +124,20 @@ Main roles are: <!--TODO: transform in table -->
     - Manage billing
     - Add and remove administrators
 
-Predefined roles apply to individual resources. 
-![alt text](../assets/images/image-10.png)
+Predefined roles apply to individual resources.
+
+
+<div align="center">
+    <img src="../assets/images/image-10.png" width="550"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>GCP predefined roles.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 Custom roles are defined by the user as a collection of allowed operations. 
 
@@ -161,7 +195,18 @@ It does not require installation as is available throgh the Web UI, perfect for 
 
 To use it, click on the terminal icon in the top left of the GCP landing page. 
 
-![alt text](../assets/images/image-11.png)
+
+<div align="center">
+    <img src="../assets/images/image-11.png" width="250"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>GCP terminal button.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 Read pop-ups, activate the machine, and then explore the shell. 
 
@@ -188,8 +233,20 @@ For more information, explore the associated [docs](https://cloud.google.com/sdk
 
 ## GCP Services Overview
 
-They are MANY. 
-![alt text](../assets/images/image-12.png)
+They are MANY.
+
+
+<div align="center">
+    <img src="../assets/images/image-12.png" width="600"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>GCP services overview.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 Main categories are:
 

@@ -178,7 +178,18 @@ In this section, we will use the Google Cloud CLI to interact with Cloud Pub/Sub
     gcloud pubsub topics create my-test-topic --project=[YOUR_PROJECT_ID]
     ```
 - You can verify the creation of the topic via the WebUI
-![alt text](../assets/images/image-14.png)
+
+
+<div align="center">
+    <img src="../assets/images/image-14.png" width="550"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>Topics list for Google Cloud Pub/Sub.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
 
 
 **Step 2: Posting Messages**
@@ -196,7 +207,19 @@ In this section, we will use the Google Cloud CLI to interact with Cloud Pub/Sub
     gcloud pubsub subscriptions create my-pull-subscription --topic=my-test-topic --project=[YOUR_PROJECT_ID]
     ```
 - You can verify the subscription via the WebUI
-![alt text](../assets/images/image-15.png)
+
+
+<div align="center">
+    <img src="../assets/images/image-15.png" width="550"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>Topics subscriptions for Google Cloud Pub/Sub.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 **Step 4: Pull Messages**
 
@@ -331,9 +354,19 @@ It is also possible to create the function from the Web UI:
 3. Click on "Cloud Run Functions"
 4. Follow the images
 
-![alt text](../assets/images/image-16.png)
 
-![alt text](../assets/images/image-17.png)
+<div align="center">
+    <img src="../assets/images/image-16.png" width="550"/>
+    <img src="../assets/images/image-17.png" width="550"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>TCreating a Google Cloud Function from the web UI.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 At this page, you can visually specify the details of your function.
 

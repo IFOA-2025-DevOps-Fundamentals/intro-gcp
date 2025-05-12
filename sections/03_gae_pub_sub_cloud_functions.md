@@ -34,7 +34,18 @@ As reported before, in GAE application is a top-level container that includes: s
 
 At least one service is required (the default service). Remeber: the default service is not possible to be deleted.
 
-![alt text](../assets/images/image-13.png)
+
+<div align="center">
+    <img src="../assets/images/image-13.png" width="500"/>
+</div>
+<div align="center">
+    <figcaption>
+        <em>Services, versions and instances for GAE applications.</em>
+        <br>
+        <br>
+    </figcaption>
+</div>
+
 
 The top-level GAE app can have multiple services, each service can have multiple versions, each version multiple istances. 
 
