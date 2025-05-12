@@ -1,6 +1,7 @@
 # GCP Lab: Let's Experiment!
 <!-- (circa 2 Ore) -->
 
+
 ## Prerequisites
 
 The main prerequisite is to install the Google Cloud SDK to have the ability to interact with your cloud instances locally via command line. 
@@ -101,7 +102,7 @@ To generate it, write in your console:
 
 **Step 3: Deployment on Google App Engine**
 
-1. Make sure you have initialized gcloud CLI and selected your GCP project. If you haven't already, follow the instructions here: <https://cloud.google.com/sdk/docs/initializing>. <!-- TODO: Fai sezione per gcloud CLI -->
+1. Make sure you have initialized gcloud CLI and selected your GCP project. If you haven't already, follow the instructions here: <https://cloud.google.com/sdk/docs/initializing>. <!-- TODO: make section for gcloud CLI -->
 
 2.  Create a new gcloud project:
     ```bash
@@ -145,6 +146,7 @@ You can do it through the GCP Web UI:
 >
 > You may still be charged for other services in your Google Cloud project, such as stored data. To avoid it, ***eliminate the entire project***.
 
+
 ### Extra 1: add two different handlers
 
 Create a Flask web app with two different handlers: 
@@ -153,9 +155,11 @@ Create a Flask web app with two different handlers:
 
 Enhance the application with css and try to structure as much as possible the code.
 
+
 ### Extra 2: add 404 page handler
 
 Following the same approach as the previous extra exercise, add an handler for the 404 page. 
+
 
 ### Extra 3: deploy on GAE
 
@@ -332,6 +336,7 @@ It is also possible to create the function from the Web UI:
 ![alt text](../assets/images/image-17.png)
 
 At this page, you can visually specify the details of your function.
+
 
 ## Conclusions 
 <!-- (5 Minuti) -->

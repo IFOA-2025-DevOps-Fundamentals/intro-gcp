@@ -96,9 +96,9 @@ graph TD
 
 **Cloud Pub/Sub is a tool to extend the capabilities of GCP, connect several modules/functions/application one to another, enable asynchronous event-driven data exchange. It is not a "stand-alone" service directly usable by end users**.
 
+
 # Google Cloud Functions
 <!-- (40 Minutes) -->
-<!-- TODO: TEST -->
 
 **Google Cloud Functions** is Google Cloud's **serverless event-driven compute** platform. The serverless paradigm lets you run code in response to events without having to worry about managing the underlying infrastructure.
 
@@ -133,6 +133,7 @@ graph TD
 ```
 *Cloud Functions Schema (Custom Schema)*
 
+
 ## Cloud Functions Caveats
 When an event triggers the execution of a Cloud Function, data associated to that event are passed to the function as parameters. 
 A *trigger* is a declaration of interest to certain events or a set of events. Associating a function to a trigger allows the function to capture events it is interested in.
@@ -164,6 +165,7 @@ Events are delivered at least once. Spurious duplicates can occur! But ... *What
 - Solution:
     - The function checks if the order has already been saved (e.g. with a unique ID) before inserting it.
     - So, even if you receive duplicates, you have no side effects → ✅ Good behavior.
+
 
 ## Cloud Functions Use Cases
 **Cloud Functions use cases:**

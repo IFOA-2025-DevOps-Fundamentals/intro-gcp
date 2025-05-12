@@ -9,7 +9,7 @@ To get started working with GCP, it is essential to understand some key concepts
 * **GCP Resource Hierarchy:** GCP resources are organized hierarchically within a project. This includes organizations (for companies), folders, and projects.
 * **Identity and Access Management (IAM):** IAM lets you manage who has access to what resources within your project. Permissions are grouped into **roles** (primitive, default, custom) that are assigned to users, groups, or **service accounts**. Service accounts are non-human identities used by applications to authenticate and interact with GCP services.
 
-<!-- TODO: trasforma in tabella per migliore leggibilità -->
+<!-- TODO: transform in table to improve readability -->
 
 ```mermaid
 graph TD
@@ -65,11 +65,13 @@ Usually, projects belongs to organizations, and you can have one or many.
 
 After the creation of the organization or a project, you can add other users or members through Google Workspace or Cloud Identity. 
 
+
 ## GCP IAM and Service Accounts
 
 In GCP there are 2 main type of accounts: *user accounts* and *service accounts*. 
 
 The former apply to humans, the latter to services, machines and applications. 
+
 
 ### User Accounts
 
@@ -84,7 +86,7 @@ It happens quiet often to need more than one permission to complete assigned ope
 
 Associated documentation [here](https://cloud.google.com/iam/docs/roles-overview?hl=it&authuser=2).
 
-Main roles are: <!--TODO: trasforma in tabella -->
+Main roles are: <!--TODO: transform in table -->
 - Owner
     - Add and remove members
     - Delete Projects
@@ -104,6 +106,7 @@ Predefined roles apply to individual resources.
 ![alt text](../assets/images/image-10.png)
 
 Custom roles are defined by the user as a collection of allowed operations. 
+
 
 ### Service Accounts
 
@@ -146,6 +149,7 @@ There are 4 main ways to interact with GCP:
 3. Using the Cloud Console Mobile app
 4. Using the REST-based APIs
 
+
 ### Cloud Shell
 
 It is a Debian-based Linux terminal, accessible directly from Google Cloud Console.
@@ -162,6 +166,7 @@ To use it, click on the terminal icon in the top left of the GCP landing page.
 Read pop-ups, activate the machine, and then explore the shell. 
 
 Through the shell, read the file `README-cloudshell.txt`.
+
 
 ### Cloud SDK
 
