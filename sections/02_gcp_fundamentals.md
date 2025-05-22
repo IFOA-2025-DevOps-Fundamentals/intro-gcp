@@ -108,7 +108,7 @@ It happens quiet often to need more than one permission to complete assigned ope
 
 Associated documentation [here](https://cloud.google.com/iam/docs/roles-overview?hl=it&authuser=2).
 
-Main roles are: <!--TODO: transform in table -->
+Basic (*primitive*) roles are: <!--TODO: transform in table -->
 - Owner
     - Add and remove members
     - Delete Projects
