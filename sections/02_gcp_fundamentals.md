@@ -77,7 +77,7 @@ To create a new project:
 </div>
 
 
-Usually, projects belongs to organizations, and you can have one or many.
+Usually, projects belong to organizations, and you can have one or many.
 
 > [!NOTE]
 >
