@@ -139,7 +139,7 @@ If you do not intend to use the application, you can deactivate it to avoid cost
 You can do it through the GCP Web UI: 
 1. Navigate to AppEngine > Dashboard
 2. Select `Settings`
-3. Click on `Deactivate Application` 
+3. Click on `Disable Application` 
 4. Follow instructions
 
 > [!NOTE]
